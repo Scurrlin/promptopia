@@ -43,16 +43,16 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         {/* Prompt Tag Field */}
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Prompt Field{" "}
+            Primary Field{" "}
             <span className="font-normal">
-              (#product, #webdevelopment, #writing, etc.)
+              (product, webdevelopment, writing, etc.)
             </span>
           </span>
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             type="text"
-            placeholder="#Tag"
+            placeholder="Tag"
             required
             className="form_input"
           />
