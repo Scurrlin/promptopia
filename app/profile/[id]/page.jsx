@@ -5,9 +5,14 @@ import { useSearchParams } from "next/navigation";
 
 import Profile from "@components/Profile";
 
+const capitalizeName = (string) => {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const UserProfile = ({ params }) => {
   const searchParams = useSearchParams();
-  const userName = searchParams.get("name");
+  const userName = capitalizeName(searchParams.get("name"));
 
   const [userPosts, setUserPosts] = useState([]);
 
@@ -24,7 +29,7 @@ const UserProfile = ({ params }) => {
 
   return (
     <Profile
-      name={userName}
+      name={`${userName}'s`}
       desc={`Welcome to ${userName}'s personal profile page. Explore their exceptional prompts and enhance your AI workflow!`}
       data={userPosts}
     />
